@@ -1,11 +1,43 @@
+local leet_arg = "leetcode.nvim"
+
 local plugins = {
   {
-    "ThePrimeagen/harpoon",
-    -- ft = "harpoon",
-    dependencies = "nvim-lua/plenary.nvim",
+    "rcarriga/nvim-notify",
     config = function(_, opts)
-      require("harpoon").setup()
-      require("core.utils").load_mappings "harpoon"
+      require("notify").setup {
+        background_colour = "#333333",
+      }
+    end,
+  },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },
+    lazy = leet_arg ~= vim.fn.argv()[1],
+    require("core.utils").load_mappings "leetcode",
+    opts = {
+      arg = leet_arg,
+      lang = "python3",
+    },
+    -- config = function()
+    --   require("core.utils").load_mappings "leetcode"
+    -- end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = "nvim-lua/plenary.nvim",
+    require("core.utils").load_mappings "harpoon",
+    config = function(_, opts)
+      local harpoon = require "harpoon"
+      harpoon:setup()
     end,
   },
   {

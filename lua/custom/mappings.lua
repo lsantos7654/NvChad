@@ -13,6 +13,15 @@ M.general = {
   },
 }
 
+M.leetcode = {
+  plugin = true,
+  n = {
+    ["<leader>lt"] = { ":Leet test<CR>", "run test cases" },
+    ["<leader>lr"] = { ":Leet submit<CR>", "submit" },
+    ["<leader>ld"] = { ":Leet desc<CR>", "toggle description" },
+  },
+}
+
 M.dap = {
   plugin = true,
   n = {
@@ -51,38 +60,38 @@ M.harpoon = {
   n = {
     ["<leader>a"] = {
       function()
-        require("harpoon").list().append()
+        require("harpoon"):list():append()
       end,
       "Add file to Harpoon",
     },
     ["<C-e>"] = {
       function()
-        require("harpoon").ui.toggle_quick_menu(require("harpoon").list())
+        require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
       end,
       "Toggle Harpoon menu",
     },
 
-    ["<C-1>"] = {
+    ["<leader>1"] = {
       function()
-        require("harpoon").list().select(1)
+        require("harpoon"):list():select(1)
       end,
       "Navigate to Harpoon file 1",
     },
-    ["<C-2>"] = {
+    ["<leader>2"] = {
       function()
-        require("harpoon").list().select(2)
+        require("harpoon"):list():select(2)
       end,
       "Navigate to Harpoon file 2",
     },
-    ["<C-3>"] = {
+    ["<leader>3"] = {
       function()
-        require("harpoon").list().select(3)
+        require("harpoon"):list():select(3)
       end,
       "Navigate to Harpoon file 3",
     },
-    ["<C-4>"] = {
+    ["<leader>4"] = {
       function()
-        require("harpoon").list().select(4)
+        require("harpoon"):list():select(4)
       end,
       "Navigate to Harpoon file 4",
     },
