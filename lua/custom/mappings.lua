@@ -64,6 +64,12 @@ M.harpoon = {
       end,
       "Add file to Harpoon",
     },
+    ["<leader>cch"] = {
+      function()
+        require("harpoon"):list():clear()
+      end,
+      "Clear Harpoon",
+    },
     ["<C-e>"] = {
       function()
         require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
@@ -77,6 +83,13 @@ M.harpoon = {
       end,
       "Navigate to Harpoon file 1",
     },
+    -- ["<leader>!"] = {
+    --   function()
+    --     require("harpoon"):list():append(4)
+    --   end,
+    --   "Add file to Harpoon",
+    -- },
+
     ["<leader>2"] = {
       function()
         require("harpoon"):list():select(2)
