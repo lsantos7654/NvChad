@@ -2,6 +2,27 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
+    "junegunn/fzf.vim",
+    dependencies = {
+      "junegunn/fzf",
+    },
+  },
+  {
+    "dreamsofcode-io/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    require("core.utils").load_mappings "GPT",
+    config = function()
+      require("chatgpt").setup {
+        async_api_key_cmd = "pass show api/tokens/openai",
+      }
+    end,
+  },
+  {
     "rcarriga/nvim-notify",
     config = function(_, opts)
       require("notify").setup {

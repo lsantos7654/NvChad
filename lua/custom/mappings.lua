@@ -13,6 +13,14 @@ M.general = {
   },
 }
 
+M.GPT = {
+  plugin = true,
+  n = {
+    ["<leader>gr"] = { ":ChatGPTRun ", "ChatGPT Run" },
+    ["<leader>gg"] = { ":ChatGPT", "ChatGPT" },
+  },
+}
+
 M.leetcode = {
   plugin = true,
   n = {
