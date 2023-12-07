@@ -2,6 +2,12 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
+    "chentoast/marks.nvim",
+    opts = function()
+      return require "custom.configs.marks"
+    end,
+  },
+  {
     "junegunn/fzf.vim",
     dependencies = {
       "junegunn/fzf",
@@ -39,7 +45,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       -- optional
       "nvim-treesitter/nvim-treesitter",
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
     lazy = leet_arg ~= vim.fn.argv()[1],
@@ -48,9 +54,6 @@ local plugins = {
       arg = leet_arg,
       lang = "python3",
     },
-    -- config = function()
-    --   require("core.utils").load_mappings "leetcode"
-    -- end,
   },
   {
     "ThePrimeagen/harpoon",
