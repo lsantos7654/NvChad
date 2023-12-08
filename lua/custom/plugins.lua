@@ -2,16 +2,37 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
-    "chentoast/marks.nvim",
-    opts = function()
-      return require "custom.configs.marks"
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+  },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("lsp_lines").setup()
     end,
   },
   {
-    "junegunn/fzf.vim",
-    dependencies = {
-      "junegunn/fzf",
-    },
+    "gorbit99/codewindow.nvim",
+    event = "VeryLazy",
+    require("core.utils").load_mappings "window",
+    config = function()
+      local codewindow = require "codewindow"
+      codewindow.setup {
+        auto_enable = true,
+        screen_bounds = "background",
+        window_border = "solid",
+      }
+    end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = "nvim-lua/plenary.nvim",
+    require("core.utils").load_mappings "harpoon",
+    config = function(_, opts)
+      local harpoon = require "harpoon"
+      harpoon:setup()
+    end,
   },
   {
     "dreamsofcode-io/ChatGPT.nvim",
@@ -56,15 +77,6 @@ local plugins = {
     },
   },
   {
-    "ThePrimeagen/harpoon",
-    dependencies = "nvim-lua/plenary.nvim",
-    require("core.utils").load_mappings "harpoon",
-    config = function(_, opts)
-      local harpoon = require "harpoon"
-      harpoon:setup()
-    end,
-  },
-  {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
@@ -88,19 +100,19 @@ local plugins = {
       require("core.utils").load_mappings "dap"
     end,
   },
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-      require("core.utils").load_mappings "dap_python"
-    end,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap-python",
+  --   ft = "python",
+  --   dependencies = {
+  --     "mfussenegger/nvim-dap",
+  --     "rcarriga/nvim-dap-ui",
+  --   },
+  --   config = function(_, opts)
+  --     local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+  --     require("dap-python").setup(path)
+  --     require("core.utils").load_mappings "dap_python"
+  --   end,
+  -- },
   {
     "jose-elias-alvarez/null-ls.nvim",
     ft = { "python", "lua" },

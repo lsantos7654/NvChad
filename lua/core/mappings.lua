@@ -383,7 +383,7 @@ M.blankline = {
   plugin = true,
 
   n = {
-    ["<leader>cc"] = {
+    ["<leader>cd"] = {
       function()
         local ok, start = require("indent_blankline.utils").get_current_context(
           vim.g.indent_blankline_context_patterns,
