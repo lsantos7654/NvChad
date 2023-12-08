@@ -38,4 +38,11 @@ end
 
 init()
 
+-- Custom remapping
+-- vim.api.nvim_set_keymap("n", "0", "$", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "9", "^", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "8", "0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'p', ':pu<CR>]==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'P', ':pu!<CR>]==', { noremap = true, silent = true })
+
 return M

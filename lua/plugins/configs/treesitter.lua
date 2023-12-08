@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua", "python", "bash", "markdown", "regex" },
+  ensure_installed = { "lua", "vim", "vimdoc", "python", "bash", "markdown", "regex" },
 
   highlight = {
     enable = true,
@@ -43,6 +43,21 @@ local options = {
       -- goto_previous_end = {
       --   ['nfE'] = '@function.outer',
       --   ['ncE'] = '@class.outer',
+      goto_next_start = {
+        ["nf"] = "@function.outer",
+        ["nc"] = "@class.outer",
+      },
+      -- goto_next_end = {
+      --   ['nF'] = '@function.outer',
+      --   ['nC'] = '@class.outer',
+      -- },
+      goto_previous_start = {
+        ["nF"] = "@function.outer",
+        ["nC"] = "@class.outer",
+      },
+      -- goto_previous_end = {
+      --   ['[M'] = '@function.outer',
+      --   ['[]'] = '@class.outer',
       -- },
       -- goto_next = {
       --   [']i'] = "@conditional.inner",
@@ -59,6 +74,12 @@ local options = {
       -- swap_previous = {
       --   ["<leader>A"] = "@parameter.inner",
       -- },
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
+      },
     },
   },
 }
