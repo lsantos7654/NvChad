@@ -2,6 +2,13 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("marks").setup {}
+    end,
+  },
+  {
     "tpope/vim-fugitive",
     event = "VeryLazy",
   },
