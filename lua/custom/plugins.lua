@@ -2,6 +2,22 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("image").setup {
+        backend = "kitty",
+      }
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("core.utils").load_mappings "dap"
+    end,
+  },
+  {
     "chentoast/marks.nvim",
     event = "VeryLazy",
     config = function()
@@ -26,7 +42,7 @@ local plugins = {
     config = function()
       local codewindow = require "codewindow"
       codewindow.setup {
-        auto_enable = true,
+        -- auto_enable = false,
         screen_bounds = "background",
         window_border = "solid",
       }
@@ -81,6 +97,7 @@ local plugins = {
     opts = {
       arg = leet_arg,
       lang = "python3",
+      image_support = true,
     },
   },
   {
@@ -102,24 +119,18 @@ local plugins = {
     end,
   },
   {
-    "mfussenegger/nvim-dap",
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
     config = function(_, opts)
-      require("core.utils").load_mappings "dap"
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      -- require("core.utils").load_mappings "dap_python"
     end,
   },
-  -- {
-  --   "mfussenegger/nvim-dap-python",
-  --   ft = "python",
-  --   dependencies = {
-  --     "mfussenegger/nvim-dap",
-  --     "rcarriga/nvim-dap-ui",
-  --   },
-  --   config = function(_, opts)
-  --     local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-  --     require("dap-python").setup(path)
-  --     require("core.utils").load_mappings "dap_python"
-  --   end,
-  -- },
   {
     "jose-elias-alvarez/null-ls.nvim",
     ft = { "python", "lua" },
