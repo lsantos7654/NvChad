@@ -60,7 +60,10 @@ M.leetcode = {
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line",
+    },
     ["<leader>dr"] = {
       function()
         require("dap").continue()
@@ -111,19 +114,12 @@ M.harpoon = {
       end,
       "Toggle Harpoon menu",
     },
-
     ["<leader>1"] = {
       function()
         require("harpoon"):list():select(1)
       end,
       "Navigate to Harpoon file 1",
     },
-    -- ["<leader>!"] = {
-    --   function()
-    --     require("harpoon"):list():append(4)
-    --   end,
-    --   "Add file to Harpoon",
-    -- },
 
     ["<leader>2"] = {
       function()
