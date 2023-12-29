@@ -28,13 +28,13 @@ local plugins = {
     "tpope/vim-fugitive",
     event = "VeryLazy",
   },
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("lsp_lines").setup()
-    end,
-  },
+  -- {
+  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("lsp_lines").setup()
+  --   end,
+  -- },
   {
     "gorbit99/codewindow.nvim",
     event = "VeryLazy",
@@ -42,7 +42,7 @@ local plugins = {
     config = function()
       local codewindow = require "codewindow"
       codewindow.setup {
-        -- auto_enable = false,
+        auto_enable = false,
         screen_bounds = "background",
         window_border = "solid",
       }
