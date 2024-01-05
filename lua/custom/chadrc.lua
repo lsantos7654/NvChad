@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "solarized_dark",
+  theme = "palenight",
   transparency = true,
 }
 M.plugins = "custom.plugins"
@@ -14,9 +14,9 @@ vim.wo.relativenumber = true
 -- }
 
 -- Custom remapping
-vim.api.nvim_set_keymap("n", "0", "$", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "9", "^", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "8", "0", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "0", "$", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "9", "^", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "8", "0", { noremap = true, silent = true })
 
 -- Example for configuring Neovim to load user-installed installed Lua rocks:
 package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?/init.lua;"

@@ -1,15 +1,15 @@
 local leet_arg = "leetcode.nvim"
 
 local plugins = {
-  {
-    "3rd/image.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("image").setup {
-        backend = "kitty",
-      }
-    end,
-  },
+  -- {
+  --   "3rd/image.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("image").setup {
+  --       backend = "kitty",
+  --     }
+  --   end,
+  -- },
   {
     "mfussenegger/nvim-dap",
     event = "VeryLazy",
@@ -27,14 +27,10 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     event = "VeryLazy",
+    config = function(_, opts)
+      require("core.utils").load_mappings "git"
+    end,
   },
-  -- {
-  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("lsp_lines").setup()
-  --   end,
-  -- },
   {
     "gorbit99/codewindow.nvim",
     event = "VeryLazy",
@@ -48,30 +44,21 @@ local plugins = {
       }
     end,
   },
-  {
-    "ThePrimeagen/harpoon",
-    dependencies = "nvim-lua/plenary.nvim",
-    require("core.utils").load_mappings "harpoon",
-    config = function(_, opts)
-      local harpoon = require "harpoon"
-      harpoon:setup()
-    end,
-  },
-  {
-    "dreamsofcode-io/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    require("core.utils").load_mappings "GPT",
-    config = function()
-      require("chatgpt").setup {
-        async_api_key_cmd = "pass show api/tokens/openai",
-      }
-    end,
-  },
+  -- {
+  --   "dreamsofcode-io/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  --   require("core.utils").load_mappings "GPT",
+  --   config = function()
+  --     require("chatgpt").setup {
+  --       async_api_key_cmd = "pass show api/tokens/openai",
+  --     }
+  --   end,
+  -- },
   {
     "rcarriga/nvim-notify",
     config = function(_, opts)
@@ -163,6 +150,7 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        "lua-language-server",
       },
     },
   },

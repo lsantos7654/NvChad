@@ -6,11 +6,18 @@ M.general = {
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "find_replace" },
     ["n"] = { "nzzzv", "next search result center screen" },
     ["N"] = { "Nzzzv", "previous search result center screen" },
-    ["<leader>d'"] = { ":delm!<CR>", "Delete All Marks" },
+    ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move text up" },
+  },
+}
+
+M.git = {
+  plugin = true,
+  n = {
+    ["<leader>gh"] = { ":G<CR>:only<CR>", "Open Git" },
   },
 }
 
@@ -92,54 +99,5 @@ M.tabufline = {
 --     },
 --   },
 -- }
-
-M.harpoon = {
-  plugin = true,
-  n = {
-    ["<leader>a"] = {
-      function()
-        require("harpoon"):list():append()
-      end,
-      "Add file to Harpoon",
-    },
-    ["<leader>cch"] = {
-      function()
-        require("harpoon"):list():clear()
-      end,
-      "Clear Harpoon",
-    },
-    ["<C-e>"] = {
-      function()
-        require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-      end,
-      "Toggle Harpoon menu",
-    },
-    ["<leader>1"] = {
-      function()
-        require("harpoon"):list():select(1)
-      end,
-      "Navigate to Harpoon file 1",
-    },
-
-    ["<leader>2"] = {
-      function()
-        require("harpoon"):list():select(2)
-      end,
-      "Navigate to Harpoon file 2",
-    },
-    ["<leader>3"] = {
-      function()
-        require("harpoon"):list():select(3)
-      end,
-      "Navigate to Harpoon file 3",
-    },
-    ["<leader>4"] = {
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      "Navigate to Harpoon file 4",
-    },
-  },
-}
 
 return M
