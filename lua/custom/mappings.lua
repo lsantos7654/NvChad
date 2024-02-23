@@ -7,6 +7,7 @@ M.general = {
     ["n"] = { "nzzzv", "next search result center screen" },
     ["N"] = { "Nzzzv", "previous search result center screen" },
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
+    ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
@@ -18,6 +19,7 @@ M.git = {
   plugin = true,
   n = {
     ["<leader>gh"] = { ":G<CR>:only<CR>", "Open Git" },
+    ["<leader>gl"] = { ":G log --graph --abbrev-commit --decorate<CR>:only<CR>", "Git Log" },
   },
 }
 
@@ -52,15 +54,6 @@ M.GPT = {
   n = {
     ["<leader>gr"] = { ":ChatGPTRun ", "ChatGPT Run" },
     ["<leader>gg"] = { ":ChatGPT", "ChatGPT" },
-  },
-}
-
-M.leetcode = {
-  plugin = true,
-  n = {
-    ["<leader>lt"] = { ":Leet test<CR>", "run test cases" },
-    ["<leader>lr"] = { ":Leet submit<CR>", "submit" },
-    ["<leader>ld"] = { ":Leet desc<CR>", "toggle description" },
   },
 }
 
