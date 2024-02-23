@@ -11,6 +11,21 @@ local plugins = {
   --   end,
   -- },
   {
+    "ethanholz/nvim-lastplace",
+    lazy = false,
+    config = function()
+      require("nvim-lastplace").setup {
+        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+        lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+        lastplace_open_folds = true,
+      }
+    end,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  {
     "mfussenegger/nvim-dap",
     event = "VeryLazy",
     config = function(_, opts)
@@ -67,26 +82,26 @@ local plugins = {
       }
     end,
   },
-  {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim", -- required by telescope
-      "MunifTanjim/nui.nvim",
-      -- optional
-      "nvim-treesitter/nvim-treesitter",
-      -- "rcarriga/nvim-notify",
-      "nvim-tree/nvim-web-devicons",
-    },
-    lazy = leet_arg ~= vim.fn.argv()[1],
-    require("core.utils").load_mappings "leetcode",
-    opts = {
-      arg = leet_arg,
-      lang = "python3",
-      image_support = true,
-    },
-  },
+  -- {
+  --   "kawre/leetcode.nvim",
+  --   build = ":TSUpdate html",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-lua/plenary.nvim", -- required by telescope
+  --     "MunifTanjim/nui.nvim",
+  --     -- optional
+  --     "nvim-treesitter/nvim-treesitter",
+  --     -- "rcarriga/nvim-notify",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   lazy = leet_arg ~= vim.fn.argv()[1],
+  --   require("core.utils").load_mappings "leetcode",
+  --   opts = {
+  --     arg = leet_arg,
+  --     lang = "python3",
+  --     image_support = true,
+  --   },
+  -- },
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",

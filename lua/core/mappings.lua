@@ -9,19 +9,30 @@ M.general = {
     ["<C-e>"] = { "<End>", "End of line" },
 
     -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "Move left" },
-    ["<C-l>"] = { "<Right>", "Move right" },
-    ["<C-j>"] = { "<Down>", "Move down" },
-    ["<C-k>"] = { "<Up>", "Move up" },
+    -- ["<C-h>"] = { "<Left>", "Move left" },
+    -- ["<C-l>"] = { "<Right>", "Move right" },
+    -- ["<C-j>"] = { "<Down>", "Move down" },
+    -- ["<C-k>"] = { "<Up>", "Move up" },
+
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
   },
 
   n = {
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
+
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    -- ["<C-h>"] = { "<C-w>h", "Window left" },
+    -- ["<C-l>"] = { "<C-w>l", "Window right" },
+    -- ["<C-j>"] = { "<C-w>j", "Window down" },
+    -- ["<C-k>"] = { "<C-w>k", "Window up" },
+
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
@@ -278,7 +289,7 @@ M.telescope = {
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
-    ["<leader>fr"] = {"<cmd> Telescope lsp_references <CR>", "Find references"},
+    ["<leader>fr"] = { "<cmd> Telescope lsp_references <CR>", "Find references" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
