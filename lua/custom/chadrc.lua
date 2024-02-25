@@ -17,6 +17,8 @@ vim.wo.relativenumber = true
 -- vim.api.nvim_set_keymap("n", "0", "$", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "9", "^", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "8", "0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'p', ':pu<CR>]==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'P', ':pu!<CR>]==', { noremap = true, silent = true })
 
 -- Example for configuring Neovim to load user-installed installed Lua rocks:
 package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?/init.lua;"
