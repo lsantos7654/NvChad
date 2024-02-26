@@ -32,18 +32,18 @@ local options = {
         ["nf"] = "@function.outer",
         ["nc"] = "@class.outer",
       },
-      -- goto_next_end = {
-      --   ['nF'] = '@function.outer',
-      --   ['nC'] = '@class.outer',
-      -- },
+      goto_next_end = {
+        ['nfe'] = '@function.outer',
+        ['nce'] = '@class.outer',
+      },
       goto_previous_start = {
         ["nF"] = "@function.outer",
         ["nC"] = "@class.outer",
       },
-      -- goto_previous_end = {
-      --   ['[M'] = '@function.outer',
-      --   ['[]'] = '@class.outer',
-      -- },
+      goto_previous_end = {
+        ['nfE'] = '@function.outer',
+        ['ncE'] = '@class.outer',
+      },
       -- goto_next = {
       --   [']i'] = "@conditional.inner",
       -- },

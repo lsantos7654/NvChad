@@ -20,6 +20,7 @@ M.git = {
   n = {
     ["<leader>gh"] = { ":G<CR>:only<CR>", "Open Git" },
     ["<leader>gl"] = { ":G log --graph --decorate<CR>:only<CR>", "Git Log" },
+    ["<leader>hc"] = {"/[*] commit \\x\\+<CR>n", "highlight commits"},
   },
 }
 
