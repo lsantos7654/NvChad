@@ -38,7 +38,7 @@ M.general = {
     ["<M-h>"] = { "^", "Move to beginning of previous word" },
     ["<M-l>"] = { "$", "Move to end of current word" },
     ["<M-j>"] = { "}", "Move to next paragraph" },
-    ["<M-k>"] = { "{", "Move to previous paragraph" },{ "{", "Move to previous paragraph" }
+    ["<M-k>"] = { "{", "Move to previous paragraph" },
     ["<M-n>"] = { "%", "Move to end of current word" },
 
     -- save
