@@ -35,10 +35,11 @@ M.general = {
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 
     -- Custom Alt mappings
-    ["<M-h>"] = { "b", "Move to beginning of previous word" },
-    ["<M-l>"] = { "e", "Move to end of current word" },
+    ["<M-h>"] = { "^", "Move to beginning of previous word" },
+    ["<M-l>"] = { "$", "Move to end of current word" },
     ["<M-j>"] = { "}", "Move to next paragraph" },
-    ["<M-k>"] = { "{", "Move to previous paragraph" },
+    ["<M-k>"] = { "{", "Move to previous paragraph" },{ "{", "Move to previous paragraph" }
+    ["<M-n>"] = { "%", "Move to end of current word" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
@@ -51,8 +52,8 @@ M.general = {
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
     -- Better paste
-    ["p"] = { ":pu<CR>]==", "paste below" },
-    ["P"] = { ":pu!<CR>]==", "paste above" },
+    ["P"] = { ":pu<CR>]==", "paste below" },
+    -- ["P"] = { ":pu!<CR>]==", "paste above" },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -84,10 +85,11 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
-    ["<M-h>"] = { "b", "Move to beginning of previous word" },
-    ["<M-l>"] = { "e", "Move to end of current word" },
+    ["<M-h>"] = { "^", "Move to beginning of previous word" },
+    ["<M-l>"] = { "$", "Move to end of current word" },
     ["<M-j>"] = { "}", "Move to next paragraph" },
     ["<M-k>"] = { "{", "Move to previous paragraph" },
+    ["<M-n>"] = { "%", "Move to end of current word" },
   },
 
   x = {
