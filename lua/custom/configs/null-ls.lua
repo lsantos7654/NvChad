@@ -12,6 +12,9 @@ local opts = {
 
     -- C++
     null_ls.builtins.formatting.clang_format,
+
+    -- Json
+    null_ls.builtins.formatting.fixjson
   },
   -- Auto Formatting
   on_attach = function(client, bufnr)

@@ -11,6 +11,12 @@ lspconfig.pyright.setup {
   filetypes = { "python" },
 }
 
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "json" },
+}
+
 lspconfig.clangd.setup {
   on_attach = on_attach,
   -- on_attach = function(client, bufnr)
