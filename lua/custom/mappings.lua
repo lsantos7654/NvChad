@@ -7,7 +7,7 @@ M.general = {
     ["n"] = { "nzzzv", "next search result center screen" },
     ["N"] = { "Nzzzv", "previous search result center screen" },
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
-    ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
+    ["<C-n>"] = {":qall<CR>", "Quit Nvim"},
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },

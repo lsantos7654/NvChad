@@ -16,7 +16,23 @@ if not vim.loop.fs_stat(lazypath) then
   require("core.bootstrap").lazy(lazypath)
 end
 
+
+-- start with nvim toggled
 -- vim.cmd([[autocmd VimEnter * NvimTreeToggle]])
+
+function ToggleNvimTreeAndClear()
+    -- Toggle NvimTree visibility
+    vim.cmd("NvimTreeToggle")
+    -- Go to the next buffer
+    vim.cmd("wincmd l")
+    -- Redraw the screen
+    vim.cmd("redraw!")
+end
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    callback = ToggleNvimTreeAndClear
+})
 
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
