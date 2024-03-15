@@ -14,7 +14,11 @@ local opts = {
     null_ls.builtins.formatting.clang_format,
 
     -- Json
-    null_ls.builtins.formatting.fixjson
+    null_ls.builtins.formatting.fixjson,
+
+    -- bash
+    null_ls.builtins.diagnostics.shellcheck,
+    null_ls.builtins.formatting.shfmt,
   },
   -- Auto Formatting
   on_attach = function(client, bufnr)

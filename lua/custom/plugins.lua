@@ -118,7 +118,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "python", "lua", "cpp", "json" },
+    ft = { "python", "lua", "cpp", "json", "sh", "bash", "zsh"},
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -139,6 +139,9 @@ local plugins = {
         "lua-language-server",
         "json-lsp",
         "fixjson",
+        "shellcheck",
+        "shfmt",
+        "bash-language-server",
       },
     },
   },

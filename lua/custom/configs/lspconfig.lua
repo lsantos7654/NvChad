@@ -17,6 +17,12 @@ lspconfig.jsonls.setup {
   filetypes = { "json" },
 }
 
+lspconfig.bashls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "bash","zsh","sh" },
+}
+
 lspconfig.clangd.setup {
   on_attach = on_attach,
   -- on_attach = function(client, bufnr)
