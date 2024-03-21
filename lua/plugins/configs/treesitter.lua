@@ -28,22 +28,22 @@ local options = {
     move = {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        ["nf"] = "@function.outer",
-        ["nc"] = "@class.outer",
-      },
-      goto_next_end = {
-        ['nfe'] = '@function.outer',
-        ['nce'] = '@class.outer',
-      },
-      goto_previous_start = {
-        ["nF"] = "@function.outer",
-        ["nC"] = "@class.outer",
-      },
-      goto_previous_end = {
-        ['nfE'] = '@function.outer',
-        ['ncE'] = '@class.outer',
-      },
+      -- goto_next_start = {
+      --   ["nf"] = "@function.outer",
+      --   ["nc"] = "@class.outer",
+      -- },
+      -- goto_next_end = {
+      --   ['nfe'] = '@function.outer',
+      --   ['nce'] = '@class.outer',
+      -- },
+      -- goto_previous_start = {
+      --   ["nF"] = "@function.outer",
+      --   ["nC"] = "@class.outer",
+      -- },
+      -- goto_previous_end = {
+      --   ['nfE'] = '@function.outer',
+      --   ['ncE'] = '@class.outer',
+      -- },
       -- goto_next = {
       --   [']i'] = "@conditional.inner",
       -- },
@@ -53,12 +53,12 @@ local options = {
     },
     swap = {
       enable = true,
-      swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>A"] = "@parameter.inner",
-      },
+      -- swap_next = {
+      --   ["<leader>a"] = "@parameter.inner",
+      -- },
+      -- swap_previous = {
+      --   ["<leader>A"] = "@parameter.inner",
+      -- },
     },
   },
 }
