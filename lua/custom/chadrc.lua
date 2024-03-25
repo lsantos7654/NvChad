@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "vscode_dark",
+  theme = "gatekeeper",
   transparency = true,
 }
 M.plugins = "custom.plugins"
