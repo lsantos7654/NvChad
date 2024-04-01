@@ -14,10 +14,10 @@ M.general = {
     -- ["<C-j>"] = { "<Down>", "Move down" },
     -- ["<C-k>"] = { "<Up>", "Move up" },
 
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+    ["<C-h>"] = { ":TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { ":TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { ":TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { ":TmuxNavigateUp<CR>", "window up" },
   },
 
   n = {
@@ -29,10 +29,10 @@ M.general = {
     -- ["<C-j>"] = { "<C-w>j", "Window down" },
     -- ["<C-k>"] = { "<C-w>k", "Window up" },
 
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+    ["<C-h>"] = { ":TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { ":TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { ":TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { ":TmuxNavigateUp<CR>", "window up" },
 
     -- Custom Alt mappings
     ["<M-h>"] = { "^", "Move to beginning of previous word" },
