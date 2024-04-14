@@ -1,6 +1,26 @@
 local leet_arg = "leetcode.nvim"
 
 local plugins = {
+  { "nvim-neotest/nvim-nio" },
+  -- {
+  --   "kawre/leetcode.nvim",
+  --   build = ":TSUpdate html",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-lua/plenary.nvim", -- required by telescope
+  --     "MunifTanjim/nui.nvim",
+  --     -- optional
+  --     "nvim-treesitter/nvim-treesitter",
+  --     -- "rcarriga/nvim-notify",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   lazy = leet_arg ~= vim.fn.argv()[1],
+  --   require("core.utils").load_mappings "leetcode",
+  --   opts = {
+  --     arg = leet_arg,
+  --     lang = "python3",
+  --   },
+  -- },
   {
     "ethanholz/nvim-lastplace",
     lazy = false,

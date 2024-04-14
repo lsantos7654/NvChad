@@ -51,6 +51,16 @@ M.window = {
   },
 }
 
+M.leetcode = {
+  plugin = true,
+  n = {
+    ["<leader>lt"] = { ":Leet test<CR>", "run test cases" },
+    ["<leader>lr"] = { ":Leet submit<CR>", "submit" },
+    ["<leader>ld"] = { ":Leet desc<CR>", "toggle description" },
+  },
+}
+
+
 M.GPT = {
   plugin = true,
   n = {
