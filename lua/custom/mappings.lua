@@ -14,6 +14,9 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move text up" },
   },
+  i = {
+    ["<S-Tab>"] = {"<C-d>", "inverse tab"}
+  }
 }
 
 M.git = {

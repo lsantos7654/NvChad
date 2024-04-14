@@ -10,6 +10,9 @@ M.mappings = require "custom.mappings"
 
 vim.wo.relativenumber = true
 
+vim.cmd [[
+  autocmd FileType * setlocal shiftwidth=0
+]]
 -- vim.diagnostic.config {
 --   virtual_text = false,
 -- }
