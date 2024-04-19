@@ -9,6 +9,8 @@ M.general = {
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
     ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
     ["<C-n>"] = {":qall<CR>", "Quit Nvim"},
+    ["<leader>pd"] = {":echo expand('%:p:h')<CR>", "Print file path"}
+
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
