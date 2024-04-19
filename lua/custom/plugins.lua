@@ -1,7 +1,23 @@
 local leet_arg = "leetcode.nvim"
 
 local plugins = {
-  { "nvim-neotest/nvim-nio" },
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    require("core.utils").load_mappings "auto",
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_enabled = true,
+        auto_save_enabled = true,
+        auto_restore_enabled = true,
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      }
+    end,
+  },
+  {
+    "nvim-neotest/nvim-nio",
+  },
   -- {
   --   "kawre/leetcode.nvim",
   --   build = ":TSUpdate html",
@@ -138,7 +154,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "python", "lua", "cpp", "json", "sh", "bash", "zsh"},
+    ft = { "python", "lua", "cpp", "json", "sh", "bash", "zsh" },
     opts = function()
       return require "custom.configs.null-ls"
     end,

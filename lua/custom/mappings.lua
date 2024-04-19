@@ -30,6 +30,14 @@ M.git = {
   },
 }
 
+M.auto = {
+  plugin = true,
+  n = {
+    ["<leader>fs"] = {":SessionSave<CR>", "Save Session"},
+    ["<leader>fr"] = {":SessionRestore<CR>", "Restore Session"}
+  }
+}
+
 M.window = {
   plugin = true,
   n = {
