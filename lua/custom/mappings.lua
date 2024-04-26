@@ -10,7 +10,8 @@ M.general = {
     ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
     ["<C-n>"] = {":qall<CR>", "Quit Nvim"},
     ["<leader>pd"] = {":echo expand('%:p:h')<CR>", "Print file path"},
-    ["<leader>ll"] = {":LspStart<CR>", "Start LSP service"}
+    ["<leader>ll"] = {":LspStart<CR>", "Start LSP service"},
+    ["<leader>lp"] = {":LspStop<CR>", "Start LSP service"}
 
   },
   v = {
