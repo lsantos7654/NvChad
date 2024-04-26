@@ -9,7 +9,8 @@ M.general = {
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
     ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
     ["<C-n>"] = {":qall<CR>", "Quit Nvim"},
-    ["<leader>pd"] = {":echo expand('%:p:h')<CR>", "Print file path"}
+    ["<leader>pd"] = {":echo expand('%:p:h')<CR>", "Print file path"},
+    ["<leader>ll"] = {":LspStart<CR>", "Start LSP service"}
 
   },
   v = {
@@ -34,7 +35,7 @@ M.auto = {
   plugin = true,
   n = {
     ["<leader>fs"] = {":SessionSave<CR>", "Save Session"},
-    ["<leader>fr"] = {":SessionRestore<CR>", "Restore Session"}
+    ["<leader>fR"] = {":SessionRestore<CR>", "Restore Session"}
   }
 }
 
