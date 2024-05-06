@@ -85,6 +85,8 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
+    ["<Tab>"] = { ">gv", "Indent line" },
+    ["<S-Tab>"] = { "<gv", "Indent line" },
     ["<M-h>"] = { "^", "Move to beginning of previous word" },
     ["<M-l>"] = { "$", "Move to end of current word" },
     ["<M-j>"] = { "}", "Move to next paragraph" },
