@@ -22,7 +22,7 @@ end
 
 function ToggleNvimTreeAndClear()
     -- Toggle NvimTree visibility
-    vim.cmd("NvimTreeToggle")
+    -- vim.cmd("NvimTreeToggle")
     -- -- Go to the next buffer
     -- vim.cmd("wincmd l")
     -- -- Redraw the screen
