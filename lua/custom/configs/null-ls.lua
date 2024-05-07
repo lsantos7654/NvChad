@@ -6,6 +6,7 @@ local opts = {
     null_ls.builtins.formatting.black,
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.ruff,
+    -- null_ls.builtins.diagnostics.pyright,
 
     -- Lua Setup
     null_ls.builtins.formatting.stylua,
@@ -27,20 +28,20 @@ local opts = {
         group = augroup,
         buffer = bufnr,
       }
-      -- vim.api.nvim_create_autocmd("BufWritePre", {
-      --   group = augroup,
-      --   buffer = bufnr,
-      --   callback = function()
-      --     vim.lsp.buf.format { bufnr = bufnr }
-      --   end,
-      -- })
-      vim.api.nvim_create_autocmd("BufWritePost", {
+      vim.api.nvim_create_autocmd("BufWritePre", {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.cmd ":LspRestart"
+          vim.lsp.buf.format { bufnr = bufnr }
         end,
       })
+      -- vim.api.nvim_create_autocmd("BufWritePost", {
+      --   group = augroup,
+      --   buffer = bufnr,
+      --   callback = function()
+      --     vim.cmd ":LspRestart"
+      --   end,
+      -- })
     end
   end,
 }
