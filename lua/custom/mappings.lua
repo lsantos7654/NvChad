@@ -7,20 +7,19 @@ M.general = {
     ["n"] = { "nzzzv", "next search result center screen" },
     ["N"] = { "Nzzzv", "previous search result center screen" },
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
-    ["<C-w>a"] = {":qall<CR>", "Quit Nvim"},
-    ["<C-n>"] = {":qall<CR>", "Quit Nvim"},
-    ["<leader>pd"] = {":echo expand('%:p:h')<CR>", "Print file path"},
-    ["<leader>ll"] = {":LspStart<CR>", "Start LSP service"},
-    ["<leader>lp"] = {":LspStop<CR>", "Start LSP service"}
-
+    ["<C-w>a"] = { ":qall<CR>", "Quit Nvim" },
+    ["<C-n>"] = { ":qall<CR>", "Quit Nvim" },
+    ["<leader>pd"] = { ":echo expand('%:p:h')<CR>", "Print file path" },
+    ["<leader>ll"] = { ":LspStart<CR>", "Start LSP service" },
+    ["<leader>lp"] = { ":LspStop<CR>", "Stop LSP service" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move text up" },
   },
   i = {
-    ["<S-Tab>"] = {"<C-d>", "inverse tab"}
-  }
+    ["<S-Tab>"] = { "<C-d>", "inverse tab" },
+  },
 }
 
 M.git = {
@@ -28,16 +27,16 @@ M.git = {
   n = {
     ["<leader>gh"] = { ":G<CR>:only<CR>", "Open Git" },
     ["<leader>gl"] = { ":G log --graph --decorate<CR>:only<CR>", "Git Log" },
-    ["<leader>hc"] = {"/[*] commit \\x\\+<CR>n", "highlight commits"},
+    ["<leader>hc"] = { "/[*] commit \\x\\+<CR>n", "highlight commits" },
   },
 }
 
 M.auto = {
   plugin = true,
   n = {
-    ["<leader>fs"] = {":SessionSave<CR>", "Save Session"},
-    ["<leader>fR"] = {":SessionRestore<CR>", "Restore Session"}
-  }
+    ["<leader>fs"] = { ":SessionSave<CR>", "Save Session" },
+    ["<leader>fR"] = { ":SessionRestore<CR>", "Restore Session" },
+  },
 }
 
 M.window = {
@@ -72,9 +71,9 @@ M.leetcode = {
     ["<leader>lt"] = { ":Leet test<CR>", "run test cases" },
     ["<leader>lr"] = { ":Leet submit<CR>", "submit" },
     ["<leader>ld"] = { ":Leet desc<CR>", "toggle description" },
+    ["<leader>lc"] = { ":Leet console<CR>", "toggle console" },
   },
 }
-
 
 M.GPT = {
   plugin = true,
@@ -94,11 +93,18 @@ M.GPT = {
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {
-      "<cmd> DapToggleBreakpoint <CR>",
-      "Add breakpoint at line",
-    },
-    ["<leader>dr"] = {
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add breakpoint at line" },
+    ---continue
+    ["<leader>dc"] = { "<cmd> DapContinue <CR>", "Continue to next breakpoint" },
+    --stepinto
+    ["<leader>dj"] = { "<cmd> DapStepInto <CR>", "Step into function/Next" },
+    --stepout
+    ["<leader>dk"] = { "<cmd> DapStepOut <CR>", "Step out of function" },
+    --stepover
+    ["<leader>dJ"] = { "<cmd> DapStepOver <CR>", "Step over function/Next in buffer" },
+    --terminate
+    ["<leader>dq"] = { "<cmd> DapTerminate <CR>", "Exit" },
+    ["<leader>dd"] = {
       function()
         require("dap").continue()
       end,

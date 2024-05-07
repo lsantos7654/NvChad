@@ -29,10 +29,10 @@ function ToggleNvimTreeAndClear()
     -- vim.cmd("redraw!")
 end
 
-vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    callback = ToggleNvimTreeAndClear
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--     pattern = "*",
+--     callback = ToggleNvimTreeAndClear
+-- })
 
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
