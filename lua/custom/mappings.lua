@@ -3,7 +3,8 @@ local M = {}
 M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "find_replace" },
+    -- ["<leader>s"] = { [[:%s/\v(<C-r><C-w>)/\1/gI<Left><Left><Left>]], "find_replace" },
+    ["<leader>s"] = { [[:%s/\v(<C-r><C-w>)//gI<Left><Left><Left>]], "find_replace" },
     ["n"] = { "nzzzv", "next search result center screen" },
     ["N"] = { "Nzzzv", "previous search result center screen" },
     ["<leader>d'"] = { ":delmarks a-zA-Z<CR>", "Delete All Marks" },
