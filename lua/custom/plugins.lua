@@ -178,6 +178,8 @@ local plugins = {
         "shellcheck",
         "shfmt",
         "bash-language-server",
+        "eslint-lsp",
+        "prettier",
       },
     },
   },

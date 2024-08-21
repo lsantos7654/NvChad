@@ -23,7 +23,7 @@ lspconfig.bashls.setup {
   autostart = false,
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "bash","zsh","sh" },
+  filetypes = { "bash", "zsh", "sh" },
 }
 
 lspconfig.clangd.setup {
@@ -34,5 +34,21 @@ lspconfig.clangd.setup {
   --   on_attach(client, bufnr)
   -- end,
   capabilities = capabilities,
-  filetypes = {"cpp"},
+  filetypes = { "cpp" },
+}
+
+lspconfig.eslint.setup {
+  autostart = false,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+}
+
+local null_ls = require "null-ls"
+null_ls.setup {
+  sources = {
+    null_ls.builtins.formatting.prettier.with {
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json" },
+    },
+  },
 }
