@@ -7,11 +7,11 @@ local plugins = {
     require("core.utils").load_mappings "auto",
     config = function()
       require("auto-session").setup {
+        auto_restore = true,
+        auto_save = true,
+        enabled = true,
         log_level = "error",
-        auto_session_enabled = true,
-        auto_save_enabled = true,
-        auto_restore_enabled = true,
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       }
     end,
   },
