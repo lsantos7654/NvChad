@@ -9,15 +9,6 @@ M.ui = {
 
 -- Plugin and mapping configurations
 M.plugins = "custom.plugins"
-
--- suppress deprecated warning
-local notify = vim.notify
-vim.notify = function(msg, ...)
-  if msg:match "vim.lsp.get_active_clients" then
-    return
-  end
-  notify(msg, ...)
-end
 M.mappings = require "custom.mappings"
 
 -- Vim options
