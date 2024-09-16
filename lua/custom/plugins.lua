@@ -55,11 +55,11 @@ local plugins = {
     require("core.utils").load_mappings "auto",
     config = function()
       require("auto-session").setup {
-        auto_restore = true,
-        auto_save = true,
-        enabled = true,
         log_level = "error",
-        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+        auto_session_enabled = true,
+        auto_save_enabled = true,
+        auto_restore_enabled = true,
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       }
     end,
   },
@@ -106,15 +106,13 @@ local plugins = {
     config = function(_, opts)
       require("core.utils").load_mappings "dap"
     end,
-    dependencies = {
-      "rcarriga/nvim-dap-ui",
-      "jay-babu/mason-nvim-dap.nvim",
-    },
   },
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",
-    opts = {},
+    config = function()
+      require("marks").setup {}
+    end,
   },
   {
     "tpope/vim-fugitive",
@@ -126,12 +124,15 @@ local plugins = {
   {
     "gorbit99/codewindow.nvim",
     event = "VeryLazy",
-    keys = require("core.utils").load_mappings "window",
-    opts = {
-      auto_enable = false,
-      screen_bounds = "background",
-      window_border = "solid",
-    },
+    require("core.utils").load_mappings "window",
+    config = function()
+      local codewindow = require "codewindow"
+      codewindow.setup {
+        auto_enable = false,
+        screen_bounds = "background",
+        window_border = "solid",
+      }
+    end,
   },
   -- {
   --   "dreamsofcode-io/ChatGPT.nvim",
@@ -208,13 +209,8 @@ local plugins = {
   },
   {
     "williamboman/mason.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "jose-elias-alvarez/null-ls.nvim",
-    },
     opts = {
       ensure_installed = {
-        "html-lsp",
         "pyright",
         "debugpy",
         "ruff",
@@ -232,13 +228,15 @@ local plugins = {
         "bash-language-server",
         "eslint-lsp",
         "prettier",
+        "html-lsp",
       },
     },
-    config = function(_, opts)
-      require("mason").setup(opts)
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-      require("null-ls").setup(require "custom.configs.null-ls")
     end,
   },
 }
