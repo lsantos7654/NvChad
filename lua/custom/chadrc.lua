@@ -9,6 +9,15 @@ M.ui = {
 
 -- Plugin and mapping configurations
 M.plugins = "custom.plugins"
+
+-- suppress deprecated warning
+local notify = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match "vim.lsp.get_active_clients" then
+    return
+  end
+  notify(msg, ...)
+end
 M.mappings = require "custom.mappings"
 
 -- Vim options
@@ -42,7 +51,7 @@ init()
 -- vim.api.nvim_set_keymap("n", "0", "$", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "9", "^", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "8", "0", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'p', ':pu<CR>]==', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'P', ':pu!<CR>]==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "p", ":pu<CR>]==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "P", ":pu!<CR>]==", { noremap = true, silent = true })
 
 return M
