@@ -29,10 +29,6 @@ lspconfig.bashls.setup {
 lspconfig.clangd.setup {
   autostart = false,
   on_attach = on_attach,
-  -- on_attach = function(client, bufnr)
-  --   client.server_capabilities.signatureHelpProvider = false
-  --   on_attach(client, bufnr)
-  -- end,
   capabilities = capabilities,
   filetypes = { "cpp" },
 }
@@ -44,11 +40,18 @@ lspconfig.eslint.setup {
   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 }
 
+lspconfig.html.setup {
+  autostart = false,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html" },
+}
+
 local null_ls = require "null-ls"
 null_ls.setup {
   sources = {
     null_ls.builtins.formatting.prettier.with {
-      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json" },
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "html" },
     },
   },
 }

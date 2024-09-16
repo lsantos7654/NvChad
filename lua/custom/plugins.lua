@@ -163,6 +163,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "html-lsp",
         "pyright",
         "debugpy",
         "ruff",

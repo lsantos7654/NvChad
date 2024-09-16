@@ -20,10 +20,16 @@ local opts = {
     -- bash
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.shfmt,
+
+    -- HTML
+    null_ls.builtins.formatting.prettier.with {
+      filetypes = { "html", "css", "javascript", "typescript", "json" },
+    },
   },
   -- Auto Formatting
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       vim.api.nvim_clear_autocmds {
         group = augroup,
         buffer = bufnr,
@@ -35,13 +41,6 @@ local opts = {
           vim.lsp.buf.format { bufnr = bufnr }
         end,
       })
-      -- vim.api.nvim_create_autocmd("BufWritePost", {
-      --   group = augroup,
-      --   buffer = bufnr,
-      --   callback = function()
-      --     vim.cmd ":LspRestart"
-      --   end,
-      -- })
     end
   end,
 }
