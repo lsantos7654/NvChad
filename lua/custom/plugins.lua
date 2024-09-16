@@ -2,6 +2,51 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    version = false, -- set this if you want to always pull the latest change
+    opts = {
+      -- add any opts here
+    },
+    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    build = "make",
+    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "zbirenbaum/copilot.lua", -- for providers='copilot'
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            -- required for Windows users
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        -- Make sure to set this up properly if you have lazy=true
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
+  },
+  {
     "rmagatti/auto-session",
     lazy = false,
     require("core.utils").load_mappings "auto",
@@ -58,13 +103,15 @@ local plugins = {
     config = function(_, opts)
       require("core.utils").load_mappings "dap"
     end,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "jay-babu/mason-nvim-dap.nvim",
+    },
   },
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",
-    config = function()
-      require("marks").setup {}
-    end,
+    opts = {},
   },
   {
     "tpope/vim-fugitive",
@@ -76,15 +123,12 @@ local plugins = {
   {
     "gorbit99/codewindow.nvim",
     event = "VeryLazy",
-    require("core.utils").load_mappings "window",
-    config = function()
-      local codewindow = require "codewindow"
-      codewindow.setup {
-        auto_enable = false,
-        screen_bounds = "background",
-        window_border = "solid",
-      }
-    end,
+    keys = require("core.utils").load_mappings "window",
+    opts = {
+      auto_enable = false,
+      screen_bounds = "background",
+      window_border = "solid",
+    },
   },
   -- {
   --   "dreamsofcode-io/ChatGPT.nvim",
@@ -161,6 +205,10 @@ local plugins = {
   },
   {
     "williamboman/mason.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
     opts = {
       ensure_installed = {
         "html-lsp",
@@ -183,12 +231,11 @@ local plugins = {
         "prettier",
       },
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
+    config = function(_, opts)
+      require("mason").setup(opts)
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+      require("null-ls").setup(require "custom.configs.null-ls")
     end,
   },
 }
