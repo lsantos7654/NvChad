@@ -7,7 +7,10 @@ local plugins = {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      -- add any opts here
+      mappings = {
+        ask = "<A-a>", -- ask
+      },
+      hints = { enabled = true },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
