@@ -1,6 +1,18 @@
 local leet_arg = "leetcode.nvim"
 
 local plugins = {
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    opts = function()
+      return require "custom.configs.noice"
+    end,
+  },
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
