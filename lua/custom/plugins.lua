@@ -8,7 +8,7 @@ local plugins = {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       mappings = {
-        ask = "<A-a>",  -- ask
+        ask = "<A-a>", -- ask
         edit = "<A-e>", -- edit
       },
       hints = { enabled = false },
@@ -22,7 +22,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua",      -- for providers='copilot'
+      "zbirenbaum/copilot.lua", -- for providers='copilot'
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -154,7 +154,15 @@ local plugins = {
     "rcarriga/nvim-notify",
     config = function(_, opts)
       require("notify").setup {
-        background_colour = "#333333",
+        timeout = 3000,
+        stages = "fade_in_slide_out",
+        render = "default",
+        background_colour = "#000000",
+        on_open = function(win)
+          vim.api.nvim_win_set_config(win, { zindex = 100 })
+        end,
+        on_close = function() end,
+        top_down = true,
       }
     end,
   },
