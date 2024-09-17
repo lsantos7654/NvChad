@@ -8,10 +8,10 @@ local opts = {
         ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
       },
       hover = {
-        enabled = false,
+        enabled = true,
       },
       signature = {
-        enabled = false,
+        enabled = true,
       },
     },
     -- you can enable a preset for easier configuration

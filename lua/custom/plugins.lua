@@ -9,7 +9,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
-    opts = function()
+    config = function()
       return require "custom.configs.noice"
     end,
   },
