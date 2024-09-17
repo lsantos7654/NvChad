@@ -20,7 +20,7 @@ local plugins = {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       mappings = {
-        ask = "<A-a>",  -- ask
+        ask = "<A-a>", -- ask
         edit = "<A-e>", -- edit
       },
       hints = { enabled = false },
@@ -34,7 +34,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua",      -- for providers='copilot'
+      "zbirenbaum/copilot.lua", -- for providers='copilot'
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",

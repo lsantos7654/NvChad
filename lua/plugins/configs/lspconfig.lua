@@ -8,9 +8,9 @@ local utils = require "core.utils"
 M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
 
-  if client.server_capabilities.signatureHelpProvider then
-    require("nvchad.signature").setup(client)
-  end
+  -- if client.server_capabilities.signatureHelpProvider then
+  --   require("nvchad.signature").setup(client)
+  -- end
 end
 
 -- disable semantic tokens

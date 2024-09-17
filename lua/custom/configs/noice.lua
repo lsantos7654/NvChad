@@ -7,6 +7,12 @@ local opts = {
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
       },
+      hover = {
+        enabled = false,
+      },
+      signature = {
+        enabled = false,
+      },
     },
     -- you can enable a preset for easier configuration
     presets = {
