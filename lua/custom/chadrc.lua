@@ -11,6 +11,18 @@ M.ui = {
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
+-- Folding configuration
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldtext =
+[[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
+vim.opt.fillchars = { fold = "·" }
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 3
+vim.opt.foldminlines = 1
+vim.cmd [[highlight Folded guibg=#2d3149 guifg=#a9b1d6]]
 -- Vim options
 local function set_options()
   vim.wo.relativenumber = true
