@@ -44,16 +44,16 @@ local options = {
       --   ['nfE'] = '@function.outer',
       --   ['ncE'] = '@class.outer',
       goto_next_start = {
-        ["nf"] = "@function.outer",
-        ["nc"] = "@class.outer",
+        ["]f"] = "@function.outer",
+        ["]c"] = "@class.outer",
       },
       -- goto_next_end = {
       --   ['nF'] = '@function.outer',
       --   ['nC'] = '@class.outer',
       -- },
       goto_previous_start = {
-        ["nF"] = "@function.outer",
-        ["nC"] = "@class.outer",
+        ["[f"] = "@function.outer",
+        ["[c"] = "@class.outer",
       },
       -- goto_previous_end = {
       --   ['[M'] = '@function.outer',
