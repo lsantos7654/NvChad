@@ -13,10 +13,14 @@ M.general = {
     ["<leader>pd"] = { ":echo expand('%:p:h')<CR>", "Print file path" },
     ["<leader>ll"] = { ":LspStart<CR>", "Start LSP service" },
     ["<leader>lp"] = { ":LspStop<CR>", "Stop LSP service" },
+    ["<A-d>"] = { "<C-e><C-e>", "Scroll window down" },
+    ["<A-u>"] = { "<C-y><C-y>", "Scroll window up" },
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv", "move text down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move text up" },
+    ["<A-d>"] = { "<C-e><C-e>", "Scroll window down" },
+    ["<A-u>"] = { "<C-y><C-y>", "Scroll window up" },
   },
   i = {
     ["<S-Tab>"] = { "<C-d>", "inverse tab" },
