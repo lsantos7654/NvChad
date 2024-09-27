@@ -2,9 +2,17 @@ local leet_arg = "leetcode.nvim"
 
 local plugins = {
   -- lazy.nvim
+  -- Lua
+  {
+    "folke/zen-mode.nvim",
+    require("core.utils").load_mappings "zen",
+    lazy = false,
+    opts = {
+    },
+  },
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
+    lazy = false,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
@@ -16,11 +24,11 @@ local plugins = {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    lazy = false,
+    require("core.utils").load_mappings "avante",
     version = false, -- set this if you want to always pull the latest change
     opts = {
       mappings = {
-        ask = "<A-a>", -- ask
+        ask = "<A-a>",  -- ask
         edit = "<A-e>", -- edit
       },
       hints = { enabled = false },
@@ -34,7 +42,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
+      "zbirenbaum/copilot.lua",      -- for providers='copilot'
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -147,21 +155,6 @@ local plugins = {
       }
     end,
   },
-  -- {
-  --   "dreamsofcode-io/ChatGPT.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim",
-  --   },
-  --   require("core.utils").load_mappings "GPT",
-  --   config = function()
-  --     require("chatgpt").setup {
-  --       async_api_key_cmd = "pass show api/tokens/openai",
-  --     }
-  --   end,
-  -- },
   {
     "rcarriga/nvim-notify",
     dependencies = "nvim-telescope/telescope.nvim",

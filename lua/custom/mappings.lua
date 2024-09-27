@@ -80,18 +80,20 @@ M.leetcode = {
   },
 }
 
-M.GPT = {
+M.avante = {
   plugin = true,
   n = {
-    ["<leader>gr"] = { ":ChatGPTRun ", "ChatGPT Run" },
-    ["<leader>gg"] = { ":ChatGPT", "ChatGPT" },
+    ["<A-a>"] = { ":AvanteAsk<CR>", "Open Avante Ask" },
   },
   v = {
-    ["<leader>ge"] = { ":ChatGPTRun explain_code<CR>", "ChatGPT Explain Code" },
-    ["<leader>go"] = { ":ChatGPTRun optimize_code<CR>", "ChatGPT Optimize Code" },
-    ["<leader>gt"] = { ":ChatGPTRun add_tests<CR>", "ChatGPT Add Test" },
-    ["<leader>gc"] = { ":ChatGPTRun complete_code<CR>", "ChatGPT Complete Code" },
-    ["<leader>gb"] = { ":ChatGPTRun fix_bugs<CR>", "ChatGPT Fix Bugs" },
+    ["<A-a>"] = { ":AvanteAsk<CR>", "Open Avante Ask" },
+  },
+}
+
+M.zen = {
+  plugin = true,
+  n = {
+    ["<leader>z"] = { ":ZenMode<CR>", "Zen Mode" },
   },
 }
 
