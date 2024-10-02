@@ -1,7 +1,6 @@
 local leet_arg = "leetcode.nvim"
 
 local plugins = {
-  -- lazy.nvim
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -16,7 +15,6 @@ local plugins = {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
       mappings = {
@@ -26,7 +24,7 @@ local plugins = {
       hints = { enabled = false },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
+    build = "make BUILD_FROM_SOURCE=true",
     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
       "stevearc/dressing.nvim",
